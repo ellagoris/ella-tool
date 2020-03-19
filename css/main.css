@@ -1,0 +1,25 @@
+img {
+  max-width: 100%;
+}
+
+#c {
+  border: 1px solid black;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.library {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 600px;
+}
+
+.library img {
+  background: #eee;
+  margin-bottom: 10px;
+}
