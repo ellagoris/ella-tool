@@ -1,8 +1,9 @@
+const db = firebase.firestore();
 const canvas = new fabric.Canvas("c");
 
 // canvas.add(rect);
 
-Array.from(document.querySelectorAll(".library img")).forEach(el =>
+document.querySelectorAll(".library img").forEach(el =>
   el.addEventListener("click", () => {
     fabric.Image.fromURL(el.src, function(img) {
       img.scale(0.2);
@@ -28,4 +29,20 @@ function onKeyDown(e) {
   }
 }
 
+function stripAssetURL(obj) {
+  const index = obj.src.indexOf("/assets");
+  obj.src = obj.src.substring(index);
+}
+
+async function onSave() {
+  const data = JSON.parse(JSON.stringify(canvas));
+  data.objects.forEach(obj => stripAssetURL(obj));
+  console.log(data);
+  data.title = prompt("Give Your Design a Name:");
+  const result = await db.collection("designs").add(data);
+  document.location = "/list.html";
+  // console.log(result);
+}
+
 window.addEventListener("keydown", onKeyDown);
+document.querySelector("#saveButton").addEventListener("click", onSave);

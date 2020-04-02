@@ -23,3 +23,22 @@ img {
   background: #eee;
   margin-bottom: 10px;
 }
+
+.designs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.design {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.design canvas {
+  width: 100% !important;
+  height: auto !important;
+  border: 1px solid #ccc;
+  max-width: 100%;
+}
