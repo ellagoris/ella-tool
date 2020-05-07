@@ -34,15 +34,25 @@ function stripAssetURL(obj) {
   obj.src = obj.src.substring(index);
 }
 
-async function onSave() {
+async function onSaveGalerij() {
   const data = JSON.parse(JSON.stringify(canvas));
   data.objects.forEach(obj => stripAssetURL(obj));
   console.log(data);
-  data.title = prompt("Give Your Design a Name:");
+  data.title = document.querySelector(".pop-up-input").value;
   const result = await db.collection("designs").add(data);
   document.location = "/list.html";
   // console.log(result);
 }
 
+function onShowPopUp() {
+document.querySelector(".pop-up").style.display="flex";
+}
+
+function onHidePopUp() {
+  document.querySelector(".pop-up").style.display="none";
+  }
+
 window.addEventListener("keydown", onKeyDown);
-document.querySelector("#saveButton").addEventListener("click", onSave);
+document.querySelector("#saveGalerij").addEventListener("click", onSaveGalerij);
+document.querySelector("#saveButton").addEventListener("click", onShowPopUp);
+document.querySelector(".pop-up-close").addEventListener("click", onHidePopUp);

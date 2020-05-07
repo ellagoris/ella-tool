@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ella</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+      <div class="knopjes_rij">
+          <a href="#" class="button" id="saveButton">Bewaar</a>
+          <a href="list.html" class="button">Lijst</a>
+      </div>
+    <div class="wrapper">
+      <canvas id="c" width="800" height="600"></canvas>
+      <div class="library">
+          <img src="assets/eitje.png" alt="" />
+          <img src="assets/bord.png" alt="" />
+          <img src="assets/mes.png" alt="" />
+          <img src="assets/vork1.png" alt="" />
+        <img src="assets/bruin onderstuk T.png" />
+        <img src="assets/driehoek zwart.png" alt="" />
+        <img src="assets/figuur paars.png" alt="" />
+        <img src="assets/grijs tussenstuk.png" alt="" />
+        <img src="assets/grijze hoek.png" alt="" />
+        <img src="assets/groene haak men aanhangstel.png" alt="" />
+        <img src="assets/onderstuk grijs rond dicht.png" alt="" />
+        <img src="assets/onderstuk grijs voetachtig recht op recht.png" alt="" />
+        <img src="assets/onderstuk kruis grijs.png" alt="" />
+        <img src="assets/oranje golf onderstuk.png" alt="" />
+        <img src="assets/oranje hoek.png" alt="" />
+        <img src="assets/oranje onderstuk spinachtig.png" alt="" />
+        <img src="assets/oranje onderstuk.png" alt="" />
+        <img src="assets/oranje zigzag.png" alt="" />
+        <img src="assets/paarse kleine cirkels geheel.png" alt="" />
+        <img src="assets/sneeuwman onderstuk grijs.png" alt="" />
+        <img src="assets/tussenstuk bruin.png" alt="" />
+        <img src="assets/zwart onderstuk rond.png" alt="" />
+      
+      </div>
+    </div>
+
+    <div class="pop-up">
+      <div class="pop-up-inner">
+          <div class="pop-up-close">×</div>
+        <div class="pop-up-row">
+          <h1>Opslaan</h1></div>
+        <div class="pop-up-row">
+          <input type="text" class="pop-up-input" placeholder="verzin naam" required>
+        </div>
+        <div class="pop-up-knopjes_rij">
+            <a href="#" class="button" id='saveTool' >Bewaar als tool</a>
+            <a href="#" class="button" id="saveGalerij">Bewaar in galerij</a>
+        </div>
+        <div class="pop-up-row"></div>
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-firestore.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCQMjv7cTjhYm7Tymvfcj8JTwrcDuyeQ9g",
+        authDomain: "ella-designs.firebaseapp.com",
+        databaseURL: "https://ella-designs.firebaseio.com",
+        projectId: "ella-designs",
+        storageBucket: "ella-designs.appspot.com",
+        messagingSenderId: "827168269352",
+        appId: "1:827168269352:web:ab7798979c8f83d683411d"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="third_party/fabric.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
